@@ -325,6 +325,7 @@ class _BuildColumnWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: padding),
       decoration: stateManager.configuration!.enableColumnBorder
           ? BoxDecoration(
+              color: stateManager.configuration!.titleBackgroundColor,
               border: Border(
                 right: BorderSide(
                   color: stateManager.configuration!.borderColor,

@@ -16,6 +16,9 @@ class PlutoGridConfiguration {
   /// The corners of the popup-type grid used inside the grid can be rounded.
   final BorderRadiusGeometry gridPopupBorderRadius;
 
+  //타이틀 배경 색 추가
+  final Color titleBackgroundColor;
+
   final Color gridBackgroundColor;
 
   /// Grid border color. (Grid outline color, Frozen column division line color)
@@ -107,6 +110,7 @@ class PlutoGridConfiguration {
     this.enableGridBorderShadow = false,
     this.gridBorderRadius = BorderRadius.zero,
     this.gridPopupBorderRadius = BorderRadius.zero,
+    this.titleBackgroundColor = Colors.white,
     this.gridBackgroundColor = Colors.white,
     this.gridBorderColor = const Color(0xFFA1A5AE),
     this.activatedColor = const Color(0xFFDCF5FF),
@@ -149,6 +153,7 @@ class PlutoGridConfiguration {
     this.enableGridBorderShadow = false,
     this.gridBorderRadius = BorderRadius.zero,
     this.gridPopupBorderRadius = BorderRadius.zero,
+    this.titleBackgroundColor = const Color(0xFF111111),
     this.gridBackgroundColor = const Color(0xFF111111),
     this.gridBorderColor = const Color(0xFF000000),
     this.activatedColor = const Color(0xFF313131),
@@ -221,6 +226,7 @@ class PlutoGridConfiguration {
     bool? enableGridBorderShadow,
     BorderRadiusGeometry? gridBorderRadius,
     BorderRadiusGeometry? gridPopupBorderRadius,
+    Color? titleBackgroundColor,
     Color? gridBackgroundColor,
     Color? gridBorderColor,
     Color? activatedColor,
@@ -256,6 +262,7 @@ class PlutoGridConfiguration {
       gridBorderRadius: gridBorderRadius ?? this.gridBorderRadius,
       gridPopupBorderRadius:
           gridPopupBorderRadius ?? this.gridPopupBorderRadius,
+      titleBackgroundColor: titleBackgroundColor ?? this.titleBackgroundColor,
       gridBackgroundColor: gridBackgroundColor ?? this.gridBackgroundColor,
       gridBorderColor: gridBorderColor ?? this.gridBorderColor,
       activatedColor: activatedColor ?? this.activatedColor,
