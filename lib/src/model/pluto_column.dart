@@ -6,6 +6,10 @@ typedef PlutoColumnValueFormatter = String Function(dynamic value);
 typedef PlutoColumnRenderer = Widget Function(
     PlutoColumnRendererContext rendererContext);
 
+//추가
+typedef PlutoTitleRenderer = Widget Function(
+    PlutoTitleRendererContext titleRendererContext);
+
 typedef PlutoColumnCheckReadOnly = bool Function(
   PlutoRow row,
   PlutoCell cell,
@@ -77,6 +81,9 @@ class PlutoColumn {
   /// Rendering for cell widget.
   PlutoColumnRenderer? renderer;
 
+  //추가
+  PlutoTitleRenderer? titleRenderer;
+
   /// Change the position of the column by dragging the column title.
   bool enableColumnDrag;
 
@@ -134,6 +141,9 @@ class PlutoColumn {
     this.formatter,
     this.applyFormatterInEditing = false,
     this.renderer,
+    //추가
+    this.titleRenderer,
+    //
     this.enableColumnDrag = true,
     this.enableRowDrag = false,
     this.enableRowChecked = false,
@@ -157,6 +167,9 @@ class PlutoColumn {
   Key get key => _key;
 
   bool get hasRenderer => renderer != null;
+
+  //추가
+  bool get hasTitleRenderer => titleRenderer != null;
 
   bool get hasCheckReadOnly => _checkReadOnly != null;
 

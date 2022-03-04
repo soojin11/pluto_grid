@@ -358,11 +358,16 @@ class _BuildColumnWidget extends StatelessWidget {
                     stateManager: stateManager,
                   ),
                 Expanded(
-                  child: _ColumnTextWidget(
-                    column: column,
-                    stateManager: stateManager,
-                    height: height,
-                  ),
+                  child: column.hasTitleRenderer
+                      ? column.titleRenderer!(PlutoTitleRendererContext(
+                          column: column,
+                          stateManager: stateManager,
+                        ))
+                      : _ColumnTextWidget(
+                          column: column,
+                          stateManager: stateManager,
+                          height: height,
+                        ),
                 ),
                 if (showSizedBoxForIcon)
                   SizedBox(width: stateManager.configuration!.iconSize),
@@ -468,6 +473,18 @@ class _ColumnTextWidget extends PlutoStatefulWidget {
 
   @override
   __ColumnTextWidgetState createState() => __ColumnTextWidgetState();
+}
+
+//추가
+class PlutoTitleRendererContext {
+  final PlutoColumn column;
+
+  final PlutoGridStateManager stateManager;
+
+  PlutoTitleRendererContext({
+    required this.column,
+    required this.stateManager,
+  });
 }
 
 abstract class __ColumnTextWidgetStateWithChange
