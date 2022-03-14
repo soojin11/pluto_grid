@@ -327,13 +327,22 @@ class _BuildColumnWidget extends StatelessWidget {
           ? BoxDecoration(
               color: stateManager.configuration!.titleBackgroundColor,
               border: Border(
-                right: BorderSide(
-                  color: stateManager.configuration!.borderColor,
-                  width: 1.0,
-                ),
-              ),
+                  right: BorderSide(
+                    color: stateManager.configuration!.borderColor,
+                    width: 1.0,
+                  ),
+                  bottom: BorderSide(
+                      color: stateManager.configuration!.titleBottomColor,
+                      // color: Colors.red,
+                      width: 2)),
             )
-          : const BoxDecoration(),
+          : BoxDecoration(
+              color: stateManager.configuration!.titleBackgroundColor,
+              border: Border(
+                  bottom: BorderSide(
+                      color: stateManager.configuration!.titleBottomColor,
+                      // color: Colors.red,
+                      width: 2))),
       child: DragTarget<PlutoColumn>(
         onWillAccept: (PlutoColumn? columnToDrag) {
           return columnToDrag != null && columnToDrag.key != column.key;

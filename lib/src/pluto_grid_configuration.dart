@@ -39,6 +39,9 @@ class PlutoGridConfiguration {
   /// Row border color. (horizontal row border, vertical column border)
   final Color borderColor;
 
+  //추가
+  final Color titleBottomColor;
+
   /// Cell color in edit state. (only current cell)
   final Color cellColorInEditState;
 
@@ -118,6 +121,7 @@ class PlutoGridConfiguration {
     this.inactivatedBorderColor = const Color(0xFFC4C7CC),
     this.checkedColor = const Color(0x11757575),
     this.borderColor = const Color(0xFFDDE2EB),
+    this.titleBottomColor = const Color(0xFFDDE2EB),
     this.cellColorInEditState = Colors.white,
     this.cellColorInReadOnlyState = const Color(0xFFC4C7CC),
     this.columnTextStyle = const TextStyle(
@@ -161,6 +165,7 @@ class PlutoGridConfiguration {
     this.inactivatedBorderColor = const Color(0xFF666666),
     this.checkedColor = const Color(0x11202020),
     this.borderColor = const Color(0xFF000000),
+    this.titleBottomColor = const Color(0xFF000000),
     this.cellColorInEditState = const Color(0xFF666666),
     this.cellColorInReadOnlyState = const Color(0xFF222222),
     this.columnTextStyle = const TextStyle(
